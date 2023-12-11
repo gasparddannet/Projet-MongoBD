@@ -31,12 +31,6 @@ for restaurant in data_restaurant:
     nb_review = review_count_by_business.get(business_id, 0)
     avg_stars = total_stars_by_business.get(business_id, 0) / nb_review if nb_review > 0 else 0
     
-    if "attributes" in restaurant and restaurant["attributes"] is not None and "Ambience" in restaurant["attributes"]:
-        
-        categories = restaurant.get("categories", [])
-        ambiance = restaurant["attributes"].get("Ambience", [])
-        restaurant["criteres"] = list(product(categories, ambiance))
-    
     restaurant["nb_review"] = nb_review
     restaurant["avg_stars"] = avg_stars
 
