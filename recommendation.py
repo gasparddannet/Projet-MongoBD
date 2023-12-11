@@ -18,9 +18,9 @@ except :
 db = conn.mydatabase
 
 # collections
-restaurant_collection = db.nouveau_yelp_restaurants
-user_collection = db.nouveau_yelp_user
-review_collection = db.nouveau_yelp_review
+restaurant_collection = db.yelp_restaurants
+user_collection = db.yelp_user
+review_collection = db.yelp_review
 
 # coefficients
 ALPHA = 0.30
