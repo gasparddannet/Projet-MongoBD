@@ -51,17 +51,17 @@ with open('Data/yelp_restaurants.json', 'r') as file:
 # Étape 2: Extraire les données nécessaires
 nouvelles_donnees = []
 for restau in data:
-    criteres = list(restau["categories"])
+    # criteres = list(restau["categories"])
     
     if "attributes" in restau and restau["attributes"] is not None and "Ambience" in restau["attributes"]:
         str_dict = restau["attributes"]["Ambience"]
         dict1 = ast.literal_eval(str_dict)
         nb = 0
-        if dict1 is not None:
-            for (cle, valeur) in dict1.items():
-                if valeur:
-                    nb +=1
-                    criteres.append(cle)
+        # if dict1 is not None:
+        #     for (cle, valeur) in dict1.items():
+        #         if valeur:
+        #             nb +=1
+        #             criteres.append(cle)
         nouveau_restau = {
             "business_id": restau["business_id"],
             "name": restau["name"],
@@ -70,7 +70,7 @@ for restau in data:
             "categories": restau["categories"],
             "ambience" : restau["attributes"]["Ambience"],
             "nbAmbience" : nb,
-            "ctireres" : criteres
+            # "ctireres" : criteres
             }
     else :
         nouveau_restau = {
@@ -80,7 +80,7 @@ for restau in data:
             "address": restau["address"],
             "categories": restau["categories"],
             "nbAmbience" : nb,
-            "criteres" : criteres
+            # "criteres" : criteres
             }   
     nouvelles_donnees.append(nouveau_restau)
 

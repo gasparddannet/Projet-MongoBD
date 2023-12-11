@@ -31,22 +31,16 @@ for restaurant in data_restaurant:
     nb_review = review_count_by_business.get(business_id, 0)
     avg_stars = total_stars_by_business.get(business_id, 0) / nb_review if nb_review > 0 else 0
     
-    categories = restaurant.get("categories", [])
-    ambiance = restaurant["attributes"].get("Ambience", [])
-
-    nouveau_restaurant = {
-        "business_id": business_id,
-        "name": restaurant["name"],
-        "city": restaurant["city"],
-        "address": restaurant["address"],
-        "categories": restaurant["categories"],
-        "attributes": restaurant["attributes"],
-        "nb_review": nb_review,
-        "avg_stars": avg_stars,
-        "criteres": list(product(categories, ambiance))
+    if "attributes" in restaurant and restaurant["attributes"] is not None and "Ambience" in restaurant["attributes"]:
         
-    }
-    nouvelles_donnees.append(nouveau_restaurant)
+        categories = restaurant.get("categories", [])
+        ambiance = restaurant["attributes"].get("Ambience", [])
+        restaurant["criteres"] = list(product(categories, ambiance))
+    
+    restaurant["nb_review"] = nb_review
+    restaurant["avg_stars"] = avg_stars
+
+    nouvelles_donnees.append(restaurant)
 
 with open('Data/nouveau_yelp_restaurants.json', 'w') as new_file:
     json.dump(nouvelles_donnees, new_file, indent=2)  
