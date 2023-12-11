@@ -53,7 +53,7 @@ nouvelles_donnees = []
 for restau in data:
     criteres = restau["categories"].split(", ")
     
-    if "attributes" in restau and restau["attributes"] is not None and "Ambience" in restau["attributes"]:
+    if "attributes" in restau and restau["attributes"] is not None and "Ambience" in restau["attributes"] and restau["attributes"]["Ambience"] is not None:
         str_dict = restau["attributes"]["Ambience"]
         dict1 = ast.literal_eval(str_dict)
         nb = 0
@@ -70,7 +70,7 @@ for restau in data:
             "categories": restau["categories"],
             "ambience" : restau["attributes"]["Ambience"],
             "nbAmbience" : nb,
-            "ctireres" : criteres
+            "criteres" : criteres
             }
     else :
         nouveau_restau = {
@@ -79,7 +79,7 @@ for restau in data:
             "city": restau["city"],
             "address": restau["address"],
             "categories": restau["categories"],
-            "nbAmbience" : nb,
+            "nbAmbience" : 0,
             "criteres" : criteres
             }   
     nouvelles_donnees.append(nouveau_restau)
