@@ -9,13 +9,13 @@ from pymongo import MongoClient
 from nltk.tokenize import word_tokenize
 
 try :
-    conn = MongoClient()
+    conn = MongoClient()    
     print("Connected successfully !")
 except :
     print("Could not connect to MongoDB")
     
 # database name:mydatabase 
-db = conn.mydatabase
+db = conn.test
 
 # collections
 restaurant_collection = db.yelp_restaurants
@@ -34,7 +34,9 @@ def jaccard(set1, set2):
     return intersection_size / union_size if union_size > 0 else 0
 
 def fa(r):
+
     r_info = restaurant_collection.find_one({"business_id": r})
+    # r_info = restaurant_collection.find({})
     avg_stars = r_info.get("avg_stars", 0)
     nb_review = r_info.get("nb_review", 0)
 
@@ -67,19 +69,18 @@ def fs(u, r):
     return social_factor
 
 def fc(u, r):
-    
-    delta_u = review_collection.find({"user_id": u, "stars": 5.0}).get("business_id")
+    delta_u = review_collection.find({"user_id": u, "stars": 5.0})#.get("business_id")
     ypsilon_r = review_collection.find({"business_id": r, "text": {"$exists": True}})
-    
+    print(delta_u)
     max_jacc = 0
     for r1 in delta_u :
-        review_u_r1 = review_collection.find_one({"user_id": u, "business_id": r1})
+        review_u_r1 = review_collection.find_one({"user_id": u, "business_id": r1["business_id"]})
         if "text" in review_u_r1 :
             v_u_r1 = set(word_tokenize(review_u_r1["text"].lower()))
         else :
             continue
         for u1 in ypsilon_r :
-            review_u1_r = review_collection.find_one({"user_id": u1, "business_id": r})
+            review_u1_r = review_collection.find_one({"user_id": u1["user_id"], "business_id": r})
             if "text" in review_u1_r :
                 v_u1_r = set(word_tokenize(review_u1_r["text"].lower()))
                 jacc = jaccard(v_u_r1,v_u1_r)
@@ -91,3 +92,5 @@ def fc(u, r):
     
 def score(u, r) :
     return ALPHA * fa(r) + BETA * fp(u, r) + GAMMA * fs(u, r) + LAMBDA * fc(u, r)
+
+print(score("IpLRJY4CP3fXtlEd8Y4GFQ", "EP9K6qXOyHFq_0tp93wh9Q"))
