@@ -93,4 +93,28 @@ def fc(u, r):
 def score(u, r) :
     return ALPHA * fa(r) + BETA * fp(u, r) + GAMMA * fs(u, r) + LAMBDA * fc(u, r)
 
-print(score("IpLRJY4CP3fXtlEd8Y4GFQ", "EP9K6qXOyHFq_0tp93wh9Q"))
+def recommendation(u, v) :
+    restau_in_v = restaurant_collection.find({"city": { "$regex": v, "$options": "i" }})
+    score_per_r = {}
+    for restau in restau_in_v :
+        r = restau["business_id"]
+        name = restau["name"]
+        score_per_r[name] = score(u,r)
+    sorted_score_per_r = dict(sorted(score_per_r.items(), key=lambda item:item[1], reverse=True))
+    compt = 0
+    print ("Recommandations pour la ville  ",v)
+    for r, s in sorted_score_per_r.items() :
+        if compt > 19 :
+            break
+        print("   rang ", compt+1, "   ",r,"  score = ",s)
+        compt += 1
+
+recommendation("kLm3B6LeboEZWX_4otpILA","Greenville")
+recommendation("kLm3B6LeboEZWX_4otpILA","Newark")
+recommendation("IpLRJY4CP3fXtlEd8Y4GFQ","Wilmington")
+recommendation("IpLRJY4CP3fXtlEd8Y4GFQ","New Castle")
+recommendation("GG0mFsEXb-02_dzFPqRV1Q","Wilmington")
+
+
+
+
