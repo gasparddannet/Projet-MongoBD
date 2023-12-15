@@ -7,6 +7,8 @@ Created on Sat Dec  9 18:47:08 2023
 
 from pymongo import MongoClient
 from nltk.tokenize import word_tokenize
+import nltk
+# nltk.download('punkt')
 
 try :
     conn = MongoClient()    
@@ -71,7 +73,7 @@ def fs(u, r):
 def fc(u, r):
     delta_u = review_collection.find({"user_id": u, "stars": 5.0})#.get("business_id")
     ypsilon_r = review_collection.find({"business_id": r, "text": {"$exists": True}})
-    print(delta_u)
+    # print(delta_u)
     max_jacc = 0
     for r1 in delta_u :
         review_u_r1 = review_collection.find_one({"user_id": u, "business_id": r1["business_id"]})

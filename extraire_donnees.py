@@ -68,7 +68,7 @@ for restau in data:
             "city": restau["city"],
             "address": restau["address"],
             "categories": restau["categories"],
-            "ambience" : restau["attributes"]["Ambience"],
+            # "ambience" : restau["attributes"]["Ambience"],
             "nbAmbience" : nb,
             "criteres" : criteres
             }
