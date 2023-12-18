@@ -27,12 +27,13 @@ criteria_by_user = {}
 for review in data_review:
     user_id = review['user_id']
     business_id = review['business_id']
-    
+    stars = review['stars']
     restaurant_criteria = criteria_by_business.get(business_id, [])
     
     if user_id not in criteria_by_user:
         criteria_by_user[user_id] = []
-    criteria_by_user[user_id].extend(restaurant_criteria)
+    if stars>2.5:
+        criteria_by_user[user_id].extend(restaurant_criteria)
 
 nouvelles_donnees_user = []
 
