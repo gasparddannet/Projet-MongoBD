@@ -8,6 +8,7 @@ Created on Sat Dec  9 18:47:08 2023
 from pymongo import MongoClient
 from nltk.tokenize import word_tokenize
 import nltk
+import time
 # nltk.download('punkt')
 
 try :
@@ -96,6 +97,7 @@ def score(u, r) :
     return ALPHA * fa(r) + BETA * fp(u, r) + GAMMA * fs(u, r) + LAMBDA * fc(u, r)
 
 def recommendation(u, v) :
+    start = time.time()
     restau_in_v = restaurant_collection.find({"city": { "$regex": v, "$options": "i" }})
     score_per_r = {}
     for restau in restau_in_v :
@@ -110,6 +112,8 @@ def recommendation(u, v) :
             break
         print("   rang ", compt+1, "   ",r,"  score = ",s)
         compt += 1
+    end = time.time()
+    print("Execution time:", end-start, "seconds\n")
 
 recommendation("kLm3B6LeboEZWX_4otpILA","Greenville")
 recommendation("kLm3B6LeboEZWX_4otpILA","Newark")
