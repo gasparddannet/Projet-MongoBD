@@ -97,8 +97,12 @@ Recommandations pour la ville   Wilmington
 
 
 
-v2
 
+
+
+
+v2
+recommendation("kLm3B6LeboEZWX_4otpILA","Greenville")
 Connected successfully !
 Recommandations pour la ville   Greenville
    rang  1     Brew Ha Ha   score =  0.0642346685572492
@@ -110,6 +114,7 @@ Recommandations pour la ville   Greenville
    rang  7     Starbucks   score =  0.02437452229299363
 Execution time: 3.922231674194336 seconds
 
+recommendation("kLm3B6LeboEZWX_4otpILA","Newark")
 Recommandations pour la ville   Newark
    rang  1     Border Cafe   score =  0.26772266443234183
    rang  2     Firebirds Wood Fired Grill   score =  0.173152688172043
@@ -133,6 +138,7 @@ Recommandations pour la ville   Newark
    rang  20     Ted's Montana Grill - Christiana   score =  0.07216363636363636
 Execution time: 115.26875114440918 seconds
 
+recommendation("IpLRJY4CP3fXtlEd8Y4GFQ","Wilmington")
 Recommandations pour la ville   Wilmington
    rang  1     Scrumptious   score =  1.1033548387096774
    rang  2     Goat Kitchen and Bar   score =  1.0649548387096774
@@ -156,6 +162,7 @@ Recommandations pour la ville   Wilmington
    rang  20     Metro Diner   score =  0.8442064516129033
 Execution time: 301.56547117233276 seconds
 
+recommendation("IpLRJY4CP3fXtlEd8Y4GFQ","New Castle")
 Recommandations pour la ville   New Castle
    rang  1     1 In Town   score =  1.0034838709677418
    rang  2     Pizza & Pasta   score =  0.8065806451612904
@@ -179,6 +186,7 @@ Recommandations pour la ville   New Castle
    rang  20     Alex's Seafood Restaurant & Clam Bar   score =  0.014941935483870966
 Execution time: 50.02590465545654 seconds
 
+recommendation("GG0mFsEXb-02_dzFPqRV1Q","Wilmington")
 Recommandations pour la ville   Wilmington
    rang  1     Juliana's Kitchen   score =  1.0977794721407623
    rang  2     Sakura Japanese Sushi Restaurant   score =  1.096635835196423

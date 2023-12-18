@@ -106,7 +106,7 @@ def recommendation(u, v) :
         score_per_r[name] = score(u,r)
     sorted_score_per_r = dict(sorted(score_per_r.items(), key=lambda item:item[1], reverse=True))
     compt = 0
-    print ("Recommandations pour la ville  ",v)
+    print ("Recommandations pour la ville:",v)
     for r, s in sorted_score_per_r.items() :
         if compt > 19 :
             break

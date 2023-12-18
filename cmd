@@ -671,6 +671,27 @@ test> db.yelp_restaurants.find({"nbAmbience":{$gte:3}})
 ]
 
 
+7bis]
+test> db.yelp_restaurants.find({ "nbAmbience": { $gte: 3 } }, { _id:0, name: 1 } )
+[
+  { name: '8th & Union Kitchen' },
+  { name: 'Farmer & the Cow' },
+  { name: 'Twisted Soul Restaurant & Bar' },
+  { name: 'Pizza by Elizabeths' },
+  { name: 'Rice Restaurant' },
+  { name: 'First Watch' },
+  { name: 'The Copper Dram' },
+  { name: 'Trolley Square Oyster House' },
+  { name: 'Satsuma Asian Kitchen & Bar' },
+  { name: 'Turning Point of Christiana' },
+  { name: 'Pizza by Elizabeths' },
+  { name: 'Daily Veg - Pike Creek' },
+  { name: 'Cafe New Castle' },
+  { name: 'Constitution Yards' }
+]
+
+
+
 8]
 db.yelp_review.find({ "user_id": { $in: ["n2UpKhkU2N-66a1QQzrjYw", "ucD25otZ0uqWPSJnl4muQQ"] } }, { "business_id": 1, "_id": 0 })
 
@@ -816,6 +837,35 @@ test> db.yelp_user.find({},{ "user_id": 1, "nbFriends":1 })
 .
 .
 ]
+
+12bis]
+test> db.yelp_user.find({},{ _id:0, user_id: 1, nbFriends:1 })
+[
+  { user_id: 'XLs_PhrJ7Qwn_RfgMM7Djw', nbFriends: 0 },
+  { user_id: '0juMoWXC7z4c7LgQP2s3sA', nbFriends: 4 },
+  { user_id: '1-gnHNzZNbn8lFwYRF_CtA', nbFriends: 3 },
+  { user_id: 'PadmV2GEoA6mWpQUpPh7Ig', nbFriends: 2 },
+  { user_id: 'FlhZYUEhfpfm0Ynxacftwg', nbFriends: 5 },
+  { user_id: 'FH14lvoIAKhva9KVgvzKJw', nbFriends: 0 },
+  { user_id: '7LmJ87EijrHcoYRu9WgoHg', nbFriends: 14 },
+  { user_id: 'VFXKRVzEMbnsDcYFdwiiuA', nbFriends: 2 },
+  { user_id: 'IpLRJY4CP3fXtlEd8Y4GFQ', nbFriends: 23 },
+  { user_id: 'UJEjJgi1xpmLR4b3J8fn2Q', nbFriends: 75 },
+  { user_id: 'kLm3B6LeboEZWX_4otpILA', nbFriends: 2 },
+  { user_id: 'mZHk_DPbeUTQBZOBOyoqlA', nbFriends: 6 },
+  { user_id: 'nPJw7YpKgHE6fowxgl3l1A', nbFriends: 8 },
+  { user_id: '-tnodf38uCXjogMhZtcWxw', nbFriends: 0 },
+  { user_id: 'k_muz40jJaiY1PVga6NDXA', nbFriends: 17 },
+  { user_id: 'GG0mFsEXb-02_dzFPqRV1Q', nbFriends: 39 },
+  { user_id: 'y5qEpAfJQaOjjG8ZJWrp6w', nbFriends: 29 },
+  { user_id: 'SBpz4xJ8MnrzXOpWiETCyw', nbFriends: 3 },
+  { user_id: 'cwChkLd3jcvmqrk5UfUGJw', nbFriends: 3 },
+  { user_id: 'NNyr4wknApjc5nF9QOO2Mg', nbFriends: 2 }
+.
+.
+.
+]
+
 
 13]
 db.yelp_user.aggregate([
