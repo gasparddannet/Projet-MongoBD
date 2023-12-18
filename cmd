@@ -1,8 +1,8 @@
-mongoimport --collection "yelp_restaurants" "nouveau_yelp_restaurants.json" --drop --jsonArray
-<<<<<<< HEAD
-=======
+sudo systemctl stop mongod
+sudo systemctl status mongod
 
->>>>>>> 59f3f122f9bed89baabfef6f069f57dabc21b9ae
+
+mongoimport --collection "yelp_restaurants" "nouveau_yelp_restaurants.json" --drop --jsonArray
 mongoimport --collection "yelp_user" "nouveau_yelp_user.json" --drop --jsonArray
 mongoimport --collection "yelp_review" "nouveau_yelp_review.json" --drop --jsonArray
 
@@ -865,6 +865,14 @@ test> db.yelp_user.find({},{ "user_id": 1, "nbFriends":1 })
 ]
 
 13]
+db.yelp_user.aggregate([
+    { $match: { user_id: { $in: ["FlXBpK_YZxLo27jcMdII1w", "6Mv-qMJyxSokCu8YFM1o0A"] } } },
+    { $group: { _id: null, friends: { $push: "$friends" } } },
+    { $unwind: "$friends" },
+    { $group: { _id: "$friends", count: { $sum: 1 } } },
+    { $match: { count: { $gte: 2 } } },
+    { $project: { _id: 0, friend_id: "$_id" } }
+]);
 
 
 14]
@@ -985,11 +993,6 @@ test> db.yelp_user.aggregate([ { $group: { _id: "$name", count: { $sum: 1 } } },
   { _id: 'John', count: 314 },
   { _id: 'Michael', count: 236 },
   { _id: 'David', count: 218 }
-<<<<<<< HEAD
 ]
 
 
-
-=======
-]
->>>>>>> 59f3f122f9bed89baabfef6f069f57dabc21b9ae
