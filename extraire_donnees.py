@@ -2,11 +2,11 @@ import json
 import ast
 
 
-# Étape 1: Lire le fichier JSON d'origine
+# Lire le fichier yelp_review d'origine
 with open('Data/yelp_review.json', 'r') as file:
     data = json.load(file)
 
-# Étape 2: Extraire les données nécessaires
+# Extraire les données nécessaires dans nouveau_yelp_review
 nouvelles_donnees = []
 for review in data:
     nouvelle_review = {
@@ -18,16 +18,15 @@ for review in data:
     }
     nouvelles_donnees.append(nouvelle_review)
 
-# Étape 3: Écrire dans un nouveau fichier JSON
 with open('Data/nouveau_yelp_review.json', 'w') as new_file:
     json.dump(nouvelles_donnees, new_file, indent=2)  
 
 #################################################################################################
-# Étape 1: Lire le fichier JSON d'origine
+# Lire le fichier yelp_user d'origine
 with open('Data/yelp_user.json', 'r') as file:
     data = json.load(file)
 
-# Étape 2: Extraire les données nécessaires
+# Extraire les données nécessaires dans nouveau_yelp_user
 nouvelles_donnees = []
 for user in data:
     nouveau_user = {
@@ -44,11 +43,11 @@ with open('Data/nouveau_yelp_user.json', 'w') as new_file:
     
 
 #################################################################################################
-# Étape 1: Lire le fichier JSON d'origine
+# Lire le fichier yelp_restaurants d'origine
 with open('Data/yelp_restaurants.json', 'r') as file:
     data = json.load(file)
 
-# Étape 2: Extraire les données nécessaires
+# Extraire les données nécessaires dans nouveau_yelp_restaurants
 nouvelles_donnees = []
 for restau in data:
     criteres = restau["categories"].split(", ")
@@ -84,7 +83,6 @@ for restau in data:
             }   
     nouvelles_donnees.append(nouveau_restau)
 
-# Étape 3: Écrire dans un nouveau fichier JSON
 with open('Data/nouveau_yelp_restaurants.json', 'w') as new_file:
     json.dump(nouvelles_donnees, new_file, indent=2)  
 

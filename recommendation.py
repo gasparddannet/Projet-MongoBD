@@ -67,7 +67,7 @@ def fs(u, r):
         if friend_rating:
             ratings.append(friend_rating["stars"])
 
-    social_factor = sum(ratings) / len(ratings) if len(ratings) > 0 else 0
+    social_factor = sum(ratings) / (len(ratings)*5) if len(ratings) > 0 else 0
 
     return social_factor
 
@@ -94,7 +94,15 @@ def fc(u, r):
     return max_jacc
     
 def score(u, r) :
-    return ALPHA * fa(r) + BETA * fp(u, r) + GAMMA * fs(u, r) + LAMBDA * fc(u, r)
+    fa_r = fa(r)
+    fp_u_r = fp(u, r)
+    fs_u_r = fs(u,r)
+    fc_u_r = fc(u,r)
+    # print("fa(r):", fa_r)
+    # print("fp(u, r):", fp_u_r)
+    # print("fs(u, r):", fs_u_r)
+    # print("fc(u, r):", fc_u_r)
+    return ALPHA * fa_r + BETA * fp_u_r + GAMMA * fs_u_r + LAMBDA * fc_u_r
 
 def recommendation(u, v) :
     start = time.time()

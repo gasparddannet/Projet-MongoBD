@@ -213,3 +213,88 @@ Execution time: 880.7114844322205 seconds
 
 
 
+
+v3]
+
+Connected successfully !
+Recommandations pour la ville: Greenville
+   rang  1     Brew Ha Ha   score =  0.0642346685572492
+   rang  2     Cromwell's American Tavern and Taqueria   score =  0.05913965844402277
+   rang  3     BBC Tavern and Grill   score =  0.058621598877980366
+   rang  4     The Copper Dram   score =  0.05504596774193548
+   rang  5     Pizzeria Maki   score =  0.032322935779816514
+   rang  6     Cosi   score =  0.02493498759305211
+   rang  7     Starbucks   score =  0.02437452229299363
+Execution time: 4.046916246414185 seconds
+
+Recommandations pour la ville: Newark
+   rang  1     Border Cafe   score =  0.26772266443234183
+   rang  2     Firebirds Wood Fired Grill   score =  0.173152688172043
+   rang  3     Metro Diner   score =  0.1649719165085389
+   rang  4     Two Stones Pub   score =  0.1448476084538376
+   rang  5     Gyro Kabob House   score =  0.12604458525345622
+   rang  6     vPho   score =  0.11592580645161288
+   rang  7     The Cheesecake Factory - Newark   score =  0.10413514431239387
+   rang  8     Brio Italian Grille   score =  0.10408064516129031
+   rang  9     Eggspectation   score =  0.10284356435643563
+   rang  10     Sushi Sumo   score =  0.10051558228540186
+   rang  11     Bahama Breeze   score =  0.0951350806451613
+   rang  12     Potstickers Asian Grill   score =  0.09463117375982652
+   rang  13     Biden Welcome Center   score =  0.09215983643798273
+   rang  14     First Watch   score =  0.08511938809444629
+   rang  15     Turning Point of Christiana   score =  0.07973244781783681
+   rang  16     Horace Shellhammer's   score =  0.07691612903225806
+   rang  17     J.B. Dawson's Restaurant & Bar   score =  0.07689983022071306
+   rang  18     Argilla Brewing   score =  0.07676129032258064
+   rang  19     Pinang Asian Cuisine   score =  0.07524346349745331
+   rang  20     Ted's Montana Grill - Christiana   score =  0.07216363636363636
+Execution time: 123.00794315338135 seconds
+
+Recommandations pour la ville: Wilmington
+   rang  1     Iron Hill Brewery & Restaurant   score =  0.3090322580645162
+   rang  2     Scrumptious   score =  0.30335483870967744
+   rang  3     Goat Kitchen and Bar   score =  0.2649548387096774
+   rang  4     El Diablo Burritos   score =  0.25806451612903225
+   rang  5     Russell's Quality Food   score =  0.23901935483870967
+   rang  6     Lucky's Coffee Shop   score =  0.22967741935483874
+   rang  7     Big Fish Grill - Riverfront   score =  0.22655483870967744
+   rang  8     Green Room   score =  0.22492903225806452
+   rang  9     Piree's Piri Piri Grill   score =  0.22361290322580646
+   rang  10     Soybean Asian Grille   score =  0.21790967741935485
+   rang  11     La Fia   score =  0.21775483870967743
+   rang  12     Pizza by Elizabeths   score =  0.21527741935483874
+   rang  13     Ubon Thai Cuisine   score =  0.2141161290322581
+   rang  14     Mikimotos Japanese Restaurant & Sushi Bar   score =  0.21331612903225805
+   rang  15     LOMA Coffee   score =  0.20978064516129036
+   rang  16     Maiale   score =  0.20820645161290324
+   rang  17     DiMeo's Pizza   score =  0.20583225806451616
+   rang  18     Washington Street Ale House   score =  0.20541935483870966
+   rang  19     Johnnie's Dog House and Chicken Shack   score =  0.2046709677419355
+   rang  20     Metro Diner   score =  0.20420645161290324
+Execution time: 301.26888823509216 seconds
+
+Recommandations pour la ville: New Castle
+   rang  1     1 In Town   score =  0.20348387096774195
+   rang  2     Pizza & Pasta   score =  0.16658064516129034
+   rang  3     Wawa   score =  0.16650322580645163
+   rang  4     Pat's Pizza & Pasta   score =  0.16510967741935487
+   rang  5     Shake Shack   score =  0.15561290322580645
+   rang  6     TGI Fridays   score =  0.09277419354838712
+   rang  7     Jessop's Tavern   score =  0.09236129032258066
+   rang  8     Ioannoni's Bullroasters   score =  0.0672
+   rang  9     Nora Lee's   score =  0.056283870967741935
+   rang  10     The Dog House   score =  0.04738064516129032
+   rang  11     Lestardo's Crab House   score =  0.03561290322580645
+   rang  12     Casablanca Moroccan Restaurant   score =  0.03553548387096774
+   rang  13     Tasti Thai   score =  0.03530322580645161
+   rang  14     Masala Kitchen   score =  0.027638709677419354
+   rang  15     Golden Dove Diner Restaurant   score =  0.02407741935483871
+   rang  16     Saap Lao Thai Cuisine   score =  0.022761290322580643
+   rang  17     Cafe New Castle   score =  0.022606451612903224
+   rang  18     Little Anthony's Pizza   score =  0.01587096774193548
+   rang  19     Rivera Taco Express   score =  0.014941935483870966
+   rang  20     Alex's Seafood Restaurant & Clam Bar   score =  0.014941935483870966
+Execution time: 51.202325105667114 seconds
+
+
+
