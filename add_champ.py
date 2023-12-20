@@ -27,18 +27,9 @@ nouvelles_donnees = []
 
 for review in data_review :
     business_id = review['business_id']
-    stars = review['stars']
-
     review_count_by_business[business_id] = review_count_by_business.get(business_id, 0) + 1
-    total_stars_by_business[business_id] = total_stars_by_business.get(business_id, 0) + stars
-    
-    user_id = review['user_id']
-    restaurant_criteria = criteria_by_business.get(business_id, [])
-    
-    if user_id not in criteria_by_user:
-        criteria_by_user[user_id] = []
-    if stars>2.5:
-        criteria_by_user[user_id].extend(restaurant_criteria)
+    total_stars_by_business[business_id] = total_stars_by_business.get(business_id, 0) + review['stars']
+
 
 
 for restaurant in data_restaurant:
@@ -51,6 +42,17 @@ for restaurant in data_restaurant:
     restaurant["avg_stars"] = avg_stars
 
     nouvelles_donnees.append(restaurant)
+    
+for review in data_review:
+    user_id = review['user_id']
+    business_id = review['business_id']
+    stars = review['stars']
+    restaurant_criteria = criteria_by_business.get(business_id, [])
+    
+    if user_id not in criteria_by_user:
+        criteria_by_user[user_id] = []
+    if stars>2.5:
+        criteria_by_user[user_id].extend(restaurant_criteria)
 
 with open('Data/nouveau_yelp_restaurants.json', 'w') as new_file:
     json.dump(nouvelles_donnees, new_file, indent=2)  
